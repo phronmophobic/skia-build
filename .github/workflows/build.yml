@@ -35,9 +35,9 @@ jobs:
         with:
           name: Skia-${{ env.release }}-macos-${{ matrix.build_type }}-x64.zip
           path: '*.zip'
-      # - run: ./release.sh
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: ./release.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   # linux:
   #   runs-on: ubuntu-latest
