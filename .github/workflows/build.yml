@@ -27,9 +27,9 @@ jobs:
       build_type: ${{ matrix.build_type }}
     steps:
       - uses: actions/checkout@v2
-      # - run: ./check_release.sh
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: ./check_release.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: ./build_macos.sh
       - uses: actions/upload-artifact@v2
         with:
@@ -52,9 +52,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: sudo ./prepare_linux.sh
-      # - run: ./check_release.sh
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: ./check_release.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: PATH=/usr/lib/binutils-2.26/bin:$PATH ./build_linux.sh
       - uses: actions/upload-artifact@v2
         with:
