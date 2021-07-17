@@ -39,7 +39,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-   linux:
+  linux:
     runs-on: ubuntu-latest
     container: ubuntu:14.04
     strategy:
