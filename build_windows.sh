@@ -18,7 +18,7 @@ else
   args="is_debug=false is_official_build=true"
 fi
 
-gn gen out/${build_type}-x64 --args="${args} \
+gn gen out/${build_type}-x86_64 --args="${args} \
   skia_use_system_expat=false \
   skia_use_system_libjpeg_turbo=false \
   skia_use_system_libpng=false \
@@ -33,17 +33,17 @@ gn gen out/${build_type}-x64 --args="${args} \
   skia_use_icu=true \
   skia_use_system_icu=false \
   skia_enable_skshaper=true \
-  target_cpu=\"x64\" \
+  target_cpu=\"x86_64\" \
   extra_cflags=[\"-DSK_FONT_HOST_USE_SYSTEM_SETTINGS\"]"
 
-ninja -C out/${build_type}-x64 skia modules
+ninja -C out/${build_type}-x86_64 skia modules
 
 if [ "${archive:-false}" = "true" ]; then
     find src -name '*.h' -print0 | \
         xargs -0 \
-              7z a -tzip -r ../Skia-${release}-windows-${build_type}-x64.zip \
-              out/${build_type}-x64/*.lib \
-              out/${build_type}-x64/icudtl.dat \
+              7z a -tzip -r ../Skia-${release}-windows-${build_type}-x86_64.zip \
+              out/${build_type}-x86_64/*.lib \
+              out/${build_type}-x86_64/icudtl.dat \
               include \
               modules/particles/include/*.h \
               modules/skottie/include/*.h \

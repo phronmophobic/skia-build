@@ -11,7 +11,7 @@ env:
   # version: m88
   skia_branch: chrome/m92
   skia_commit: a77a4620d2
-  release: m92-a77a4620d2
+  release: m92-a77a4620d2-2
   archive: true
 
 jobs:

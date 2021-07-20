@@ -18,7 +18,7 @@ else
   args="is_debug=false is_official_build=true"
 fi
 
-gn gen out/${build_type}-x64 --args="${args} \
+gn gen out/${build_type}-x86_64 --args="${args} \
   skia_use_system_expat=false \
   skia_use_system_libjpeg_turbo=false \
   skia_use_system_libpng=false \
@@ -35,16 +35,16 @@ gn gen out/${build_type}-x64 --args="${args} \
   skia_enable_skshaper=true \
   skia_enable_gpu=true \
   skia_use_gl=true \
-  target_cpu=\"x64\" \
+  target_cpu=\"x86_64\" \
   extra_cflags=[\"-stdlib=libc++\", \"-mmacosx-version-min=10.10\"] \
   extra_cflags_cc=[\"-frtti\"]"
 
-ninja -C out/${build_type}-x64 skia modules
+ninja -C out/${build_type}-x86_64 skia modules
 
 if [ "${archive:-false}" = "true" ]; then
     find src -name '*.h' -print0 | xargs -0 \
-                                         zip --recurse-paths --quiet ../Skia-${release}-macos-${build_type}-x64.zip \
-                                         out/${build_type}-x64/*.a \
+                                         zip --recurse-paths --quiet ../Skia-${release}-macos-${build_type}-x86_64.zip \
+                                         out/${build_type}-x86_64/*.a \
                                          include \
                                          modules/particles/include/*.h \
                                          modules/skottie/include/*.h \
