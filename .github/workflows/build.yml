@@ -11,7 +11,7 @@ env:
   # version: m88
   skia_branch: chrome/m92
   skia_commit: a77a4620d2
-  release: m92-a77a4620d2-2
+  release: m92-a77a4620d2-3
   archive: true
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
       - run: ./build_macos.sh
       - uses: actions/upload-artifact@v2
         with:
-          name: Skia-${{ env.release }}-macos-${{ matrix.build_type }}-x64.zip
+          name: Skia-${{ env.release }}-macos-${{ matrix.build_type }}-x86_64.zip
           path: '*.zip'
       - run: ./release.sh
         env:
@@ -58,7 +58,7 @@ jobs:
       - run: PATH=/usr/lib/binutils-2.26/bin:$PATH ./build_linux.sh
       - uses: actions/upload-artifact@v2
         with:
-          name: Skia-${{ env.release }}-linux-${{ matrix.build_type }}-x64.zip
+          name: Skia-${{ env.release }}-linux-${{ matrix.build_type }}-x86_64.zip
           path: '*.zip'
       - run: ./release.sh
         env:
@@ -85,7 +85,7 @@ jobs:
   #       run: ./build_windows.sh
   #     - uses: actions/upload-artifact@v2
   #       with:
-  #         name: Skia-${{ env.release }}-windows-${{ matrix.build_type }}-x64.zip
+  #         name: Skia-${{ env.release }}-windows-${{ matrix.build_type }}-x86_64.zip
   #         path: '*.zip'
   #     - shell: bash
   #       run: ./release.sh
