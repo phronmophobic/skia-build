@@ -9,8 +9,8 @@ if ! curl --fail --location --silent --show-error --header "${auth}" --header "$
   exit 0
 fi
 
-if grep -q "Skia-${release}-${platform}-${build_type}-x86_64.zip" release.json; then
-    echo "> Artifact \"Skia-${release}-${platform}-${build_type}-x86_64.zip\" exists, stopping"
+if grep -q "Skia-${release}-${platform}-${build_type}-${arch}.zip" release.json; then
+    echo "> Artifact \"Skia-${release}-${platform}-${build_type}-${arch}.zip\" exists, stopping"
     rm release.json
     exit 1
 fi

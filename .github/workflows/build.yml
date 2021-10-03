@@ -20,11 +20,13 @@ jobs:
     runs-on: macos-10.15
     strategy:
       matrix:
+        arch: ["x86_64", "arm64"]
         build_type: [Release]
       fail-fast: false
     env:
       platform: macos
       build_type: ${{ matrix.build_type }}
+      arch: ${{ matrix.arch }}
     steps:
       - uses: actions/checkout@v2
       - run: ./check_release.sh
@@ -33,7 +35,7 @@ jobs:
       - run: ./build_macos.sh
       - uses: actions/upload-artifact@v2
         with:
-          name: Skia-${{ env.release }}-macos-${{ matrix.build_type }}-x86_64.zip
+          name: Skia-${{ env.release }}-macos-${{ matrix.build_type }}-${{ matrix.arch }}.zip
           path: '*.zip'
       - run: ./release.sh
         env:
