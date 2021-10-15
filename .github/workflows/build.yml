@@ -47,10 +47,12 @@ jobs:
     strategy:
       matrix:
         build_type: [Release]
+        arch: ["x86_64", "arm64"]
       fail-fast: false
     env:
       platform: linux
       build_type: ${{ matrix.build_type }}
+      arch: ${{ matrix.arch }}
     steps:
       - uses: actions/checkout@v2
       - run: sudo ./prepare_linux.sh
@@ -60,7 +62,7 @@ jobs:
       - run: PATH=/usr/lib/binutils-2.26/bin:$PATH ./build_linux.sh
       - uses: actions/upload-artifact@v2
         with:
-          name: Skia-${{ env.release }}-linux-${{ matrix.build_type }}-x86_64.zip
+          name: Skia-${{ env.release }}-linux-${{ matrix.build_type }}-${{ matrix.arch }}.zip
           path: '*.zip'
       - run: ./release.sh
         env:
