@@ -68,30 +68,30 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  # windows:
-  #   runs-on: windows-2019
-  #   strategy:
-  #     matrix:
-  #       build_type: [Release]
-  #     fail-fast: false
-  #   env:
-  #     platform: windows
-  #     build_type: ${{ matrix.build_type }}
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     # - shell: bash
-  #     #   run: ./check_release.sh
-  #     #   env:
-  #     #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #     - uses: microsoft/setup-msbuild@v1.0.1
-  #     - uses: ilammy/msvc-dev-cmd@v1.3.0
-  #     - shell: bash
-  #       run: ./build_windows.sh
-  #     - uses: actions/upload-artifact@v2
-  #       with:
-  #         name: Skia-${{ env.release }}-windows-${{ matrix.build_type }}-x86_64.zip
-  #         path: '*.zip'
-  #     - shell: bash
-  #       run: ./release.sh
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  windows:
+    runs-on: windows-2019
+    strategy:
+      matrix:
+        build_type: [Release]
+      fail-fast: false
+    env:
+      platform: windows
+      build_type: ${{ matrix.build_type }}
+    steps:
+      - uses: actions/checkout@v2
+      # - shell: bash
+      #   run: ./check_release.sh
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: microsoft/setup-msbuild@v1.0.1
+      - uses: ilammy/msvc-dev-cmd@v1.3.0
+      - shell: bash
+        run: ./build_windows.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Skia-${{ env.release }}-windows-${{ matrix.build_type }}-x86_64.zip
+          path: '*.zip'
+      - shell: bash
+        run: ./release.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
