@@ -83,7 +83,7 @@ jobs:
       #   run: ./check_release.sh
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: microsoft/setup-msbuild@v1.0.1
+      - uses: microsoft/setup-msbuild@v1.1
       - uses: ilammy/msvc-dev-cmd@v1.3.0
       - shell: bash
         run: ./build_windows.sh
