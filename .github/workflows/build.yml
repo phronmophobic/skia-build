@@ -11,7 +11,7 @@ env:
   # version: m88
   skia_branch: chrome/m110
   skia_commit: 4d519a8ba97ab32c3f310f2417e122b8ea354345
-  release: 4d519a8ba97ab32c3f310f2417e122b8ea354345-2
+  release: 4d519a8ba97ab32c3f310f2417e122b8ea354345-3
   archive: true
 
 jobs:
