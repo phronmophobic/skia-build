@@ -6,7 +6,7 @@ cd "`dirname $0`"
 source ./checkout.sh
 
 if [ "${checkout:-true}" != "false" ]; then
-  python2 tools/git-sync-deps
+  python3 tools/git-sync-deps
 fi
 
 build_type=${build_type:-Release}
