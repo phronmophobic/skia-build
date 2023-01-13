@@ -33,6 +33,7 @@ gn gen out/${build_type}-arm64 --args="${args} \
   skia_use_icu=true \
   skia_use_system_icu=false \
   skia_enable_skshaper=true \
+  skia_enable_skparagraph=true \
   skia_enable_gpu=true \
   skia_use_gl=true \
   skia_use_metal=true \

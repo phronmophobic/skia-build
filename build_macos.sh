@@ -33,8 +33,10 @@ gn gen out/${build_type}-${arch} --args="${args} \
   skia_use_icu=true \
   skia_use_system_icu=false \
   skia_enable_skshaper=true \
+  skia_enable_skparagraph=true \
   skia_enable_gpu=true \
   skia_use_gl=true \
+  skia_use_metal=true \
   target_cpu=\"${arch}\" \
   extra_cflags=[\"-stdlib=libc++\", \"-mmacosx-version-min=10.10\"] \
   extra_cflags_cc=[\"-frtti\"]"

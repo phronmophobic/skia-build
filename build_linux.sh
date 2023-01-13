@@ -30,14 +30,15 @@ gn gen out/${build_type}-${arch} --args="${args} \
   skia_use_harfbuzz=true \
   skia_use_system_harfbuzz=false \
   skia_pdf_subset_harfbuzz=true \
-  skia_use_icu=false \
+  skia_use_icu=true \
   skia_use_system_icu=false \
   skia_enable_skshaper=true \
+  skia_enable_skparagraph=true \
   skia_enable_gpu=true \
   skia_use_gl=true \
   target_cpu=\"${arch}\" \
-  extra_cflags_cc=[\"-frtti\"] \
-  cxx=\"g++-9\""
+  extra_cflags=[\"-stdlib=libc++\"] \
+  extra_cflags_cc=[\"-frtti\"]"
 
 ninja -C out/${build_type}-${arch} skia modules
 
