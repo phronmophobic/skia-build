@@ -56,6 +56,8 @@ if [ "${archive:-false}" = "true" ]; then
               modules/sksg/include/*.h \
               modules/skshaper/include/*.h \
               modules/skshaper/src/*.h \
+              modules/skcms/*.h \
+              modules/skcms/src/*.h \
               third_party/externals/angle2/LICENSE \
               third_party/externals/angle2/include \
               third_party/externals/freetype/docs/FTL.TXT \
