@@ -1,5 +1,7 @@
 #!/bin/bash
 set -o errexit -o nounset -o pipefail
+set -x
+
 cd "`dirname $0`"
 
 if [ "${checkout:-true}" != "false" ]; then
