@@ -10,6 +10,8 @@ if [ "${checkout:-true}" != "false" ]; then
   python3 tools/git-sync-deps
 fi
 
+python3 bin/fetch-ninja
+
 build_type=${build_type:-Release}
 echo "> Build type $build_type"
 
@@ -42,7 +44,7 @@ gn gen out/${build_type}-${arch} --args="${args} \
   extra_cflags=[\"-stdlib=libc++\", \"-mmacosx-version-min=10.10\"] \
   extra_cflags_cc=[\"-frtti\"]"
 
-ninja -C out/${build_type}-${arch} skia modules
+./third_party/ninja/ninja -C out/${build_type}-${arch} skia modules
 
 if [ "${archive:-false}" = "true" ]; then
     find src -name '*.h' -print0 | xargs -0 \
