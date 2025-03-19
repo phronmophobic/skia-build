@@ -33,7 +33,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: ./build_macos.sh
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: Skia-${{ env.release }}-macos-${{ matrix.build_type }}-${{ matrix.arch }}.zip
           path: '*.zip'
@@ -59,7 +59,7 @@ jobs:
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: ./build_linux.sh
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: Skia-${{ env.release }}-linux-${{ matrix.build_type }}-${{ matrix.arch }}.zip
           path: '*.zip'
@@ -86,7 +86,7 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1
       - shell: bash
         run: ./build_windows.sh
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: Skia-${{ env.release }}-windows-${{ matrix.build_type }}-x86_64.zip
           path: '*.zip'
