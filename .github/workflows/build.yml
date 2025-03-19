@@ -11,13 +11,13 @@ env:
   # version: m88
   skia_branch: chrome/m112
   skia_commit: f5fefe5245098be43cb608eace5e14d67cdc09e6
-  release: f5fefe5245098be43cb608eace5e14d67cdc09e6-1
+  release: f5fefe5245098be43cb608eace5e14d67cdc09e6-2
   archive: true
 
 jobs:
 
   macos:
-    runs-on: macos-10.15
+    runs-on: macos-15
     strategy:
       matrix:
         arch: ["x86_64", "arm64"]
