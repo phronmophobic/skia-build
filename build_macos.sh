@@ -41,7 +41,7 @@ gn gen out/${build_type}-${arch} --args="${args} \
   skia_use_gl=true \
   skia_use_metal=true \
   target_cpu=\"${arch}\" \
-  extra_cflags=[\"-stdlib=libc++\", \"-mmacosx-version-min=10.10\"] \
+  extra_cflags=[\"-stdlib=libc++\", \"-mmacosx-version-min=10.14\"] \
   extra_cflags_cc=[\"-frtti\"]"
 
 ./third_party/ninja/ninja -C out/${build_type}-${arch} skia modules
