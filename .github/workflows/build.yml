@@ -9,9 +9,9 @@ on:
 
 env:
   # version: m88
-  skia_branch: chrome/m135
-  skia_commit: 8c26f6d9f480e208b87fe7e9ccce8bd1dc7e8c3b
-  release: 8c26f6d9f480e208b87fe7e9ccce8bd1dc7e8c3b-1
+  skia_branch: main
+  skia_commit: dbfd72770bdd2e7b82d493df8cdda6338fdf7f7c
+  release: dbfd72770bdd2e7b82d493df8cdda6338fdf7f7c-1
   archive: true
 
 jobs:
