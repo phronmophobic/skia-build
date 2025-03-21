@@ -61,6 +61,7 @@ if [ "${archive:-false}" = "true" ]; then
                                          modules/skshaper/src/*.h \
                                          modules/skcms/*.h \
                                          modules/skcms/src/*.h \
+                                         modules/skunicode/include/*.h \
                                          modules/svg/include/*.h \
                                          third_party/externals/angle2/LICENSE \
                                          third_party/externals/angle2/include \
