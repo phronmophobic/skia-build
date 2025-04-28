@@ -11,7 +11,7 @@ env:
   # version: m88
   skia_branch: main
   skia_commit: dbfd72770bdd2e7b82d493df8cdda6338fdf7f7c
-  release: dbfd72770bdd2e7b82d493df8cdda6338fdf7f7c-2
+  release: dbfd72770bdd2e7b82d493df8cdda6338fdf7f7c-3
   archive: true
 
 jobs:
