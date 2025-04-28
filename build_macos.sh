@@ -59,6 +59,7 @@ if [ "${archive:-false}" = "true" ]; then
                                          modules/sksg/include/*.h \
                                          modules/skshaper/include/*.h \
                                          modules/skshaper/src/*.h \
+                                         modules/skshaper/utils/*.h \
                                          modules/skcms/*.h \
                                          modules/skcms/src/*.h \
                                          modules/skunicode/include/*.h \
